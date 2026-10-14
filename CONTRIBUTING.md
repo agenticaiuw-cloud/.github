@@ -27,6 +27,15 @@ How we work, short version.
 5. Once it's approved, click Squash and merge. That turns your commits into one commit on main. If GitHub lets you pick that commit's email, keep your noreply address. GitHub deletes the branch for you. Your next change starts over at step 1 with a new branch.
 6. Never force push to main or delete someone else's branch. Committed or pushed to main by mistake? Don't try to undo it. Say so in your team's thread.
 
+## Working with other teams
+
+Each team builds in its own repo. That way all three teams can work at the same time. You can't push to another team's repo. You can still read it, open issues and comment.
+
+* Need something from another team's code? Open an issue in their repo that says what you need and why. That team decides how to build it.
+* Have feedback on another team's work? Comment on their pull request. Only that team merges it.
+* Changing how two teams' code fits together? Write a proposal in the docs repo first and add a reviewer from each of those teams.
+* The security team reviews every team's work. Expect their comments on your pull requests too.
+
 ## Never commit secrets
 
 No API keys, tokens, passwords, private keys or .env files in any repo or Discord message, ever. Keep keys in a local .env file, which every repo's .gitignore already skips. Keep key files you download, like a service account JSON, outside the repo folder. If your code needs the file, put its path in your .env. On github.com, never upload a .env file or a folder that has one. To show teammates which keys the code needs, commit a .env.example file with the key names and no values. A new file doesn't show up in your changes? Its name may match a line in the .gitignore. Ask in your team's thread before you rename it, add it with `git add -f` or change the .gitignore.
